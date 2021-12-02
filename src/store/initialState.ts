@@ -1,0 +1,1 @@
+export const initialState = window.__STATE__;
