@@ -1,17 +1,17 @@
 import React from 'react';
-
-import { Provider, useSelector } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux'
 import { store } from './store';
 
-function App() {
-  // const dispatch = useDispatch();
+import UserList from './components/UserList'
 
+function App() {
   return (
     <Provider store={store}>
       <Router>
         <div className="App">
           <div>App</div>
+          <UserList />
         </div>
       </Router>
     </Provider>
