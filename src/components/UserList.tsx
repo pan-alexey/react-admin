@@ -10,9 +10,8 @@ const UserList: React.FC = () => {
 
   useEffect(() => {
     fetchUsers()
-  }, []);
-  
-  // const {page, error, loading, todos, limit} = useTypedSelector(state => state.todo)
+  }, []); // eslint-disable-line
+
   return(<pre>
     {JSON.stringify(user, null, 2)}
   </pre>)
