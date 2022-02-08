@@ -10,6 +10,8 @@ const UserList: React.FC = () => {
 
   useEffect(() => {
     fetchUsers()
+
+    console.log(user.users)
   }, []); // eslint-disable-line
 
   return(<pre>

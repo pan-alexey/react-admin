@@ -26,5 +26,8 @@
   },
   "include": [
     "src"
-, "src/store/.actionTypes.ts", "src/store/.actionCreators.ts"  ]
+    ,"src/store/.actionTypes.ts"
+    ,"src/store/.actionCreators.ts"
+    ,"src/.backup/App.tsx"
+  ]
 }
