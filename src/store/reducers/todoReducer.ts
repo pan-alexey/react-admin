@@ -1,3 +1,4 @@
+import { produce } from 'immer'
 import {TodoAction, TodoActionTypes, TodoState} from "../types";
 
 const initialState: TodoState = {
@@ -8,17 +9,21 @@ const initialState: TodoState = {
     loading: false
 }
 
-export const todoReducer = (state = initialState, action: TodoAction): TodoState => {
+export const todoReducer = (state = initialState, action: TodoAction): TodoState => produce(state, (state)=> {
     switch (action.type) {
         case TodoActionTypes.FETCH_TODOS:
-            return {...state, loading: true}
+            state.loading = true
+        break;
         case TodoActionTypes.FETCH_TODOS_SUCCESS:
-            return {...state, loading: false, todos: action.payload}
+            state.loading = false
+            state.todos = action.payload
+        break;
         case TodoActionTypes.FETCH_TODOS_ERROR:
-            return {...state, loading: false, error: action.payload}
+            state.loading = false
+            state.error = action.payload
+        break; 
         case TodoActionTypes.SET_TODO_PAGE:
-            return {...state, page: action.payload}
-        default:
-            return state
+            state.page = action.payload
+        break;
     }
-}
+})
